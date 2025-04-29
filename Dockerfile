@@ -1,9 +1,5 @@
+# Usa la imagen oficial de Apache como base
+FROM httpd:2.4
 
-FROM nginx:alpine
-
-COPY . /usr/share/nginx/html
-
-EXPOSE 80
-
-
-CMD ["nginx", "-g", "daemon off;"]
+# Copia todos los archivos de tu sitio web al directorio por defecto de Apache
+COPY . /usr/local/apache2/htdocs/
